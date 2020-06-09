@@ -12,8 +12,13 @@
 
 function telephoneCheck(str) {
   let regex = /^(1\s?)?/;
-  
+
   return regex.test(str);
+  /*
+  ^(1\s?)? #handles the presence or the absence of the country code, 1
+  
+  */
+
 }
 
 console.log(telephoneCheck("555-555-5555"));
