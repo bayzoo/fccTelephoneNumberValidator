@@ -11,12 +11,14 @@
 "use strict";
 
 function telephoneCheck(str) {
-  let regex = /^(1\s?)?/;
+  let regex = /^(1\s?)?(\d{3}(\s|-)?|\(\d{3}\)\s?)\d{3}(\s|-)?\d{4}$/;
 
   return regex.test(str);
   /*
-  ^(1\s?)? #handles the presence or the absence of the country code, 1
-  
+  ^(1\s?)? #handles the presence or the absence of the country code, 1 and whether or not there is a proceeding space
+  (\d{3}(\s|-)?|\(\d{3}\)\s?) #handles the area code, whether or not is surrounded by parenthesis and the proceeding space or dash
+  \d{3}(\s|-)? #handles the next 3 digits and whether there is a proceeding space or dash
+  \d{4}$ #handles the remaining 4 digits
   */
 
 }
